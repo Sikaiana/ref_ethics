@@ -23,7 +23,7 @@ al. 2024)](https://doi.org/10.1111/ele.14395).
 
 #### 2 Funtions
 
-- `calc_ethics` uses a list of DOIs (i.e. your own) and then extracts
+- `doi_ethics` uses a list of DOIs (i.e. your own) and then extracts
   metadata of the corresponding papers and the references therein. The
   output is a dataframe of the number of total references, the number of
   references published in papers appearing in DAFNEE as well as the
@@ -44,10 +44,10 @@ code. When you have list of DOIs:
 from ethics_functions import *
 
 # create a list of DOIs to check
-dois = ['10.1111/oik.08090', '10.1111/geb.13413']
+dois=['10.1091/mbc.E19-03-0147', '10.1016/j.tree.2018.02.005']
 
-#'save' species wether to save the output table ('yes'/'no'; default save='yes')
-res = calc_ethics(dois, save='yes')
+#'save' species whether to save the output table ('yes'/'no'; default save='yes')
+res = doi_ethics(dois, save='yes')
 print(res)
 ```
 
@@ -57,7 +57,7 @@ contain complete DOIs):
 ``` r
 from ethics_functions import *
 
-in_prep('test_refs.txt')
+txt_ethics('test_refs.txt')
 ```
 
 #### References
