@@ -1,0 +1,52 @@
+
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Calculate your ethic citation score!
+The script provides two functions (in python) to calculate the ratio of cited references that have been published in 'ethical' journals. DAFNEE (Database of Academia Friendly jourNals in Ecology and Evolution, https://dafnee.isem-evolution.fr/) identifies and provides a list of "non-profit, learned society, or university-associated journals relevant to the field of ecology and evolutionary biology".
+
+#### Context
+The scientific publication system has highly shifted towards high profit journals with increasing publication and/or access costs for the scientific and public community. The 'publish or peerish' pressure, especially on early career scientists, is continuing to push into this direction. One identified step to break this dilema is to support 'ethical' journals, for example by preferentially citing works havin gopted for these journals [(Receveur et al. 2024)](https://doi.org/10.1111/ele.14395).
+
+
+#### 2 Funtions
+* `doi_ethics` uses a list of DOIs (i.e. your own) and then extracts metadata of the corresponding papers and the references therein. The output is a dataframe of the number of total references, the number of references published in papers appearing in DAFNEE as well as the raio.
+* `in_prep` does the same calculations for a given .txt file of a copied reference list of a single paper (i.e. your paper in prep). Please note that the extraction is based on DOIs and thefore requires a  citation style including complete DOI https adresses.
+
+Please note that in few cases metadata of a DOI cannot be retrieved.
+
+
+#### Usage
+Either download & run the script `run_ethics`, or run the following code.
+When you have list of DOIs:
+```{r eval=FALSE}
+from ethics_functions import *
+
+# create a list of DOIs to check
+dois=['10.1091/mbc.E19-03-0147', '10.1016/j.tree.2018.02.005']
+
+#'save' species whether to save the output table ('yes'/'no'; default save='yes')
+res = doi_ethics(dois, save='yes')
+print(res)
+```
+
+When you want to scan a .txt file (make sure your copied references contain complete DOIs):
+```{r eval=FALSE}
+from ethics_functions import *
+
+txt_ethics('test_refs.txt')
+```
+
+
+#### References
+Receveur, A., Bonfanti, J., d'Agata, S., Helmstetter, A. J., Moore, N. A., Oliveira, B. F., ... & Veytia, D. (2024). *David versus Goliath: Early career researchers in an unethical publishing system*. Ecology Letters, 27(3). [doi.org/10.1111/ele.14395](https://doi.org/10.1111/ele.14395)

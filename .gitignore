@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+__pycache__
+*.pdf
+*.ipynb
+*.txt
+DAFNEE_mod.csv
+
