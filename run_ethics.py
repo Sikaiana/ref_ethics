@@ -1,4 +1,4 @@
-#Download the functions ('ethics_functions.py') and the dafnee database (DAFNEE.csv)
+#Download the functions ('ethics_functions.py') and the dafnee database ('DAFNEE.csv')
 
 from ethics_functions import *
 

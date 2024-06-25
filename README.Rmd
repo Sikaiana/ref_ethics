@@ -19,7 +19,7 @@ The script provides two functions (in python) to calculate the ratio of cited re
 The scientific publication system has highly shifted towards high profit journals with increasing publication and/or access costs for the scientific and public community. The 'publish or peerish' pressure, especially on early career scientists, is continuing to push into this direction. One identified step to break this dilema is to support 'ethical' journals, for example by preferentially citing works havin gopted for these journals [(Receveur et al. 2024)](https://doi.org/10.1111/ele.14395).
 
 
-#### 2 Funtions
+#### 2 Functions
 * `doi_ethics` uses a list of DOIs (i.e. your own) and then extracts metadata of the corresponding papers and the references therein. The output is a dataframe of the number of total references, the number of references published in papers appearing in DAFNEE as well as the raio.
 * `in_prep` does the same calculations for a given .txt file of a copied reference list of a single paper (i.e. your paper in prep). Please note that the extraction is based on DOIs and thefore requires a  citation style including complete DOI https adresses.
 
@@ -27,8 +27,8 @@ Please note that in few cases metadata of a DOI cannot be retrieved.
 
 
 #### Usage
-Either download & run the script `run_ethics`, or run the following code.
-When you have list of DOIs:
+Download the database ('DAFNEE.csv') and the functions ('ethics_functions.py') before either running the script `run_ethics` or the following code.
+When you have a list of DOIs:
 ```{r eval=FALSE}
 from ethics_functions import *
 
@@ -44,7 +44,7 @@ When you want to scan a .txt file (make sure your copied references contain comp
 ```{r eval=FALSE}
 from ethics_functions import *
 
-txt_ethics('test_refs.txt')
+txt_ethics('your-copied-refs.txt')
 ```
 
 
