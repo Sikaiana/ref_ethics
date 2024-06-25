@@ -21,7 +21,7 @@ direction. One identified step to break this dilema is to support
 gopted for these journals [(Receveur et
 al. 2024)](https://doi.org/10.1111/ele.14395).
 
-#### 2 Funtions
+#### 2 Functions
 
 - `doi_ethics` uses a list of DOIs (i.e. your own) and then extracts
   metadata of the corresponding papers and the references therein. The
@@ -37,8 +37,9 @@ Please note that in few cases metadata of a DOI cannot be retrieved.
 
 #### Usage
 
-Either download & run the script `run_ethics`, or run the following
-code. When you have list of DOIs:
+Download the database (‘DAFNEE.csv’) and the functions
+(‘ethics_functions.py’) before either running the script `run_ethics` or
+the following code. When you have a list of DOIs:
 
 ``` r
 from ethics_functions import *
@@ -57,7 +58,7 @@ contain complete DOIs):
 ``` r
 from ethics_functions import *
 
-txt_ethics('test_refs.txt')
+txt_ethics('your-copied-refs.txt')
 ```
 
 #### References
