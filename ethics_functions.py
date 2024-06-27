@@ -21,10 +21,15 @@ def doi_ethics(dois, save='yes'):
         # get metadata
         API_CALL = "https://opencitations.net/api/v1/metadata/" + doi
         HTTP_HEADERS = {"authorization": "72375271-8ca9-4b31-8c13-18d1b97fee4c"}
-        res=get(API_CALL, headers=HTTP_HEADERS, timeout=10)
-
-        #if res.text and not len(res.text) == 0 and res.status_code == 200:
-        #if len(res.json()[0]["source_title"]) > 0:
+        try:
+            res=get(API_CALL, headers=HTTP_HEADERS, timeout=10)
+        except Exception as e:
+            input_titles.append('Timeout - no info retrieved')
+            res_ref_tot.append(np.nan)
+            res_ref_ethic.append(np.nan)
+            res_ref_ratio.append(np.nan)
+            continue
+    
         if res.status_code == 200 and len(res.json()) >= 1:
             """if answer ok"""
             # extract reference DOIS
@@ -37,7 +42,10 @@ def doi_ethics(dois, save='yes'):
             ref_names=[]
             for i in ref_dois:
                 API_CALL = "https://opencitations.net/api/v1/metadata/" + i
-                res_loop = get(API_CALL, headers=HTTP_HEADERS, timeout=10)
+                try:
+                    res_loop = get(API_CALL, headers=HTTP_HEADERS, timeout=10)
+                except Exception as e:
+                    ref_names.append(np.nan)
 
                 if res_loop.status_code == 200 and len(res_loop.json()) >= 1:
                     """if answer ok"""
@@ -97,8 +105,11 @@ def txt_ethics(filename):
         for i in ref_dois:
             API_CALL = "https://opencitations.net/api/v1/metadata/" + i
             HTTP_HEADERS = {"authorization": "72375271-8ca9-4b31-8c13-18d1b97fee4c"}
-            res_loop = get(API_CALL, headers=HTTP_HEADERS, timeout=10)
-
+            try:
+                res_loop = get(API_CALL, headers=HTTP_HEADERS, timeout=10)
+            except Exception as e:
+                ref_names.append(np.nan)
+            
             if res_loop.status_code == 200 and len(res_loop.json()) >= 1:
                 """if answer ok"""
                 res_js_loop=res_loop.json()[0]["source_title"]

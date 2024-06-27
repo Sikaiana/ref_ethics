@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 The script provides two functions (in python) to calculate the ratio of cited references that have been published in 'ethical' journals. DAFNEE (Database of Academia Friendly jourNals in Ecology and Evolution, https://dafnee.isem-evolution.fr/) identifies and provides a list of "non-profit, learned society, or university-associated journals relevant to the field of ecology and evolutionary biology".
 
 #### Context
-The scientific publication system has highly shifted towards high profit journals with increasing publication and/or access costs for the scientific and public community. The 'publish or peerish' pressure, especially on early career scientists, is continuing to push into this direction. One identified step to break this dilema is to support 'ethical' journals, for example by preferentially citing works havin gopted for these journals [(Receveur et al. 2024)](https://doi.org/10.1111/ele.14395).
+The scientific publication system has highly shifted towards high profit journals with increasing publication and/or access costs for the scientific and public community. The 'publish or peerish' pressure, especially on early career scientists, is continuing to push into this direction. One identified step to break this dilema is to support 'ethical' journals, for example by preferentially citing works having opted for these journals [(Receveur et al. 2024)](https://doi.org/10.1111/ele.14395).
 
 
 #### 2 Functions
@@ -24,6 +24,7 @@ The scientific publication system has highly shifted towards high profit journal
 * `in_prep` does the same calculations for a given .txt file of a copied reference list of a single paper (i.e. your paper in prep). Please note that the extraction is based on DOIs and thefore requires a  citation style including complete DOI https adresses.
 
 Please note that in few cases metadata of a DOI cannot be retrieved.
+Also, with the current implementation the scanning of a list of DOIs can take some time!
 
 
 #### Usage

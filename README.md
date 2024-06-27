@@ -17,8 +17,8 @@ journals with increasing publication and/or access costs for the
 scientific and public community. The ‘publish or peerish’ pressure,
 especially on early career scientists, is continuing to push into this
 direction. One identified step to break this dilema is to support
-‘ethical’ journals, for example by preferentially citing works havin
-gopted for these journals [(Receveur et
+‘ethical’ journals, for example by preferentially citing works having
+opted for these journals [(Receveur et
 al. 2024)](https://doi.org/10.1111/ele.14395).
 
 #### 2 Functions
@@ -34,6 +34,8 @@ al. 2024)](https://doi.org/10.1111/ele.14395).
   citation style including complete DOI https adresses.
 
 Please note that in few cases metadata of a DOI cannot be retrieved.
+Also, with the current implementation the scanning of a list of DOIs can
+take some time!
 
 #### Usage
 
